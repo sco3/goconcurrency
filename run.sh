@@ -17,5 +17,7 @@ rm -rf cnt
 
 run > readme.md 2>&1
 
+sed -i 's/\+/\\+/g' readme.md
+
 
 

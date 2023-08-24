@@ -1,13 +1,13 @@
-+ rm -rf cnt
-+ go build
-+ ./cnt
-Sequential Add, Sum: 449985516,  Time Taken: 76.760566ms
+\+ rm -rf cnt
+\+ go build
+\+ ./cnt
+Sequential Add, Sum: 450010337,  Time Taken: 75.39752ms
 cpu: 4
-Concurrent Add, Sum: 449985516,  Time Taken: 56.259691ms
-+ rm -rf cnt
-+ go build -compiler gccgo -gccgoflags ' -O3 ' -o cnt main.go
-+ ./cnt
-Sequential Add, Sum: 450036169,  Time Taken: 88.451501ms
+Concurrent Add, Sum: 450010337,  Time Taken: 57.072392ms
+\+ rm -rf cnt
+\+ go build -compiler gccgo -gccgoflags ' -O3 ' -o cnt main.go
+\+ ./cnt
+Sequential Add, Sum: 449998772,  Time Taken: 88.360735ms
 cpu: 4
-Concurrent Add, Sum: 450036169,  Time Taken: 140.150352ms
-+ rm -rf cnt
+Concurrent Add, Sum: 449998772,  Time Taken: 129.353267ms
+\+ rm -rf cnt
