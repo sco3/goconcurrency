@@ -1,4 +1,4 @@
-#!/usr/bin/env -S bash -x -e
+#!/usr/bin/env -S bash -x
 
 
 
@@ -17,7 +17,8 @@ rm -rf cnt
 
 run > readme.md 2>&1
 
-sed -i 's/\+/>/g' readme.md
+CR=$(printf '\r')
+sed -i "s/\+.*/>&$CR$CR/g" readme.md
 
 
 
