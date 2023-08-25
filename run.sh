@@ -17,9 +17,11 @@ rm -rf cnt
 
 run > readme.md 2>&1
 
-CR=$(printf '\r')
-sed -i "s/\+/>/g" readme.md
-sed -i "s/.*/&$CR$CR/g" readme.md
+sed -i '1 i\```' readme.md
+echo '```' >> readme.md 
+#CR=$(printf '\r')
+#sed -i "s/\+/>/g" readme.md
+#sed -i "s/.*/&$CR$CR/g" readme.md
 
 
 
