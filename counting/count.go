@@ -36,9 +36,6 @@ func AddConcurrent(numbers []int) int64 {
 
 	// Utilize all cores on machine
 	numOfCores := runtime.NumCPU()
-	print ("cpu: ")
-	println (numOfCores)
-	runtime.GOMAXPROCS(numOfCores)
 
 	var sum int64
 	max := len(numbers)
