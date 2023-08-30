@@ -3,7 +3,7 @@
 
 
 function run {
-rm -rf goconcurrency
+rm -f goconcurrency
 go build 
 ./goconcurrency 5e8 && rm -f goconcurrency
 
