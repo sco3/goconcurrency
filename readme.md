@@ -1,27 +1,27 @@
 ```
-+ rm -rf goconcurrency
++ rm -f goconcurrency
 + go build
 + ./goconcurrency 5e8
-Generated 500000000 numbers, Time Taken: 12.642730176s
-Load avergate: 0.32 0.33 0.43 7/1248 9450
+Generated 500000000 numbers, Time Taken: 13.062703705s
+Load avergate: 1.46 1.85 1.47 2/1523 12383
 
-Sequential Add, Sum: 2249956274,  Time Taken: 368.478841ms
-Load avergate: 0.32 0.33 0.43 4/1248 9451
+Sequential Add, Sum: 2249974319,  Time Taken: 382.815859ms
+Load avergate: 1.46 1.85 1.47 12/1523 12384
 
 
 Max processors: 1
-Concurrent Add, Sum: 2249956274,  Time Taken: 369.402629ms
-Load avergate: 0.32 0.33 0.43 5/1248 9452
+Concurrent Add, Sum: 2249974319,  Time Taken: 505.685869ms
+Load avergate: 1.46 1.85 1.47 5/1522 12385
 
 
 Max processors: 2
-Concurrent Add, Sum: 2249956274,  Time Taken: 269.479378ms
-Load avergate: 0.32 0.33 0.43 4/1248 9453
+Concurrent Add, Sum: 2249974319,  Time Taken: 313.387707ms
+Load avergate: 1.46 1.85 1.47 2/1522 12386
 
 
 Max processors: 3
-Concurrent Add, Sum: 2249956274,  Time Taken: 272.388705ms
-Load avergate: 0.32 0.33 0.43 2/1248 9454
+Concurrent Add, Sum: 2249974319,  Time Taken: 272.832454ms
+Load avergate: 1.46 1.85 1.47 2/1522 12387
 
 + rm -f goconcurrency
 ```
