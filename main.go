@@ -1,11 +1,13 @@
 package main
 
 import (
-	"cnt/counting"
 	"fmt"
+	"goconcurrency/counting"
 	"log"
+	"os"
 	"os/exec"
 	"runtime"
+	"strconv"
 	"time"
 )
 
@@ -20,7 +22,19 @@ func getLoadAvg() {
 
 func main() {
 	t := time.Now()
-	var n int = 5e8
+
+	var n int64 = 1000
+
+	if len(os.Args) > 1 {
+		//fmt.Printf("args: %v\n", os.Args[1])
+		f, err := strconv.ParseFloat(os.Args[1], 64)
+		if err != nil {
+			fmt.Printf("Cannot parse %v\n", os.Args[1])
+			return
+		}
+		n = int64(f)
+
+	}
 	numbers := counting.GenerateNumbers(n)
 	fmt.Printf("Generated %v numbers, Time Taken: %s\n", n, time.Since(t))
 	getLoadAvg()
@@ -30,12 +44,12 @@ func main() {
 	fmt.Printf("Sequential Add, Sum: %d,  Time Taken: %s\n", sum, time.Since(t))
 	getLoadAvg()
 
-	for maxproc := 1; maxproc <= 4; maxproc++ {
+	for maxproc := 1; maxproc < 4; maxproc++ {
 		runtime.GOMAXPROCS(maxproc)
 		fmt.Printf("\nMax processors: %v\n", maxproc)
 
 		t = time.Now()
-		sum = counting.AddConcurrent(numbers)
+		sum = counting.AddConcurrent(numbers, maxproc)
 		fmt.Printf("Concurrent Add, Sum: %d,  Time Taken: %s\n", sum, time.Since(t))
 		getLoadAvg()
 

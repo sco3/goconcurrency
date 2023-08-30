@@ -3,14 +3,13 @@
 
 
 function run {
-rm -rf cnt
+rm -rf goconcurrency
 go build 
-./cnt && rm -f cnt
+./goconcurrency 5e7 && rm -f goconcurrency
 
-#rm -rf cnt
-#go build -compiler gccgo -gccgoflags " -O3 "  -o cnt main.go
-#./cnt
-#cat /proc/loadavg
+#rm -rf goconcurrency
+#go build -compiler gccgo -gccgoflags " -O3 "  -o goconcurrency main.go
+#./goconcurrency
 
 }
 

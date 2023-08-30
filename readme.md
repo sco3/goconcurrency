@@ -1,32 +1,27 @@
 ```
-+ rm -rf cnt
++ rm -rf goconcurrency
 + go build
-+ ./cnt
-Generated 500000000 numbers, Time Taken: 13.516958966s
-Load avergate: 0.94 4.52 3.58 4/1502 15432
++ ./goconcurrency 5e7
+Generated 50000000 numbers, Time Taken: 1.273327559s
+Load avergate: 0.33 0.36 0.45 4/1251 9304
 
-Sequential Add, Sum: 2250104173,  Time Taken: 377.34533ms
-Load avergate: 0.94 4.52 3.58 4/1503 15434
+Sequential Add, Sum: 224990373,  Time Taken: 36.152895ms
+Load avergate: 0.33 0.36 0.45 2/1252 9306
 
 
 Max processors: 1
-Concurrent Add, Sum: 2250104173,  Time Taken: 369.997009ms
-Load avergate: 0.94 4.52 3.58 2/1503 15435
+Concurrent Add, Sum: 224990373,  Time Taken: 36.924844ms
+Load avergate: 0.33 0.36 0.45 5/1252 9307
 
 
 Max processors: 2
-Concurrent Add, Sum: 2250104173,  Time Taken: 272.278887ms
-Load avergate: 0.94 4.52 3.58 4/1503 15436
+Concurrent Add, Sum: 224990373,  Time Taken: 26.797675ms
+Load avergate: 0.33 0.36 0.45 2/1252 9308
 
 
 Max processors: 3
-Concurrent Add, Sum: 2250104173,  Time Taken: 271.21523ms
-Load avergate: 0.94 4.52 3.58 2/1503 15437
+Concurrent Add, Sum: 224990373,  Time Taken: 27.049865ms
+Load avergate: 0.33 0.36 0.45 4/1252 9309
 
-
-Max processors: 4
-Concurrent Add, Sum: 2250104173,  Time Taken: 266.86153ms
-Load avergate: 0.94 4.52 3.58 2/1503 15438
-
-+ rm -f cnt
++ rm -f goconcurrency
 ```

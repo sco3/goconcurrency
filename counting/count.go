@@ -2,7 +2,6 @@ package counting
 
 import (
 	"math/rand"
-	"runtime"
 	"sync"
 	"sync/atomic"
 	"time"
@@ -13,10 +12,11 @@ func init() {
 }
 
 // GenerateNumbers - random number generation
-func GenerateNumbers(max int) []int {
+func GenerateNumbers(max int64) []int {
 	rand.Seed(time.Now().UnixNano())
 	numbers := make([]int, max)
-	for i := 0; i < max; i++ {
+	var i int64
+	for i = 0; i < max; i++ {
 		numbers[i] = rand.Intn(10)
 	}
 	return numbers
@@ -32,10 +32,10 @@ func Add(numbers []int) int64 {
 }
 
 // AddConcurrent - concurrent code to add numbers
-func AddConcurrent(numbers []int) int64 {
+func AddConcurrent(numbers []int, numOfCores int) int64 {
 
 	// Utilize all cores on machine
-	numOfCores := runtime.NumCPU()
+	// numOfCores := runtime.NumCPU()
 
 	var sum int64
 	max := len(numbers)
@@ -49,6 +49,9 @@ func AddConcurrent(numbers []int) int64 {
 		// Divide the input into parts
 		start := i * sizeOfParts
 		end := start + sizeOfParts
+		if i+1 == numOfCores {
+			end = len(numbers)
+		}
 		part := numbers[start:end]
 
 		// Run computation for each part in seperate goroutine.
