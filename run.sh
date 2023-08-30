@@ -5,7 +5,7 @@
 function run {
 rm -rf goconcurrency
 go build 
-./goconcurrency 5e7 && rm -f goconcurrency
+./goconcurrency 5e8 && rm -f goconcurrency
 
 #rm -rf goconcurrency
 #go build -compiler gccgo -gccgoflags " -O3 "  -o goconcurrency main.go
