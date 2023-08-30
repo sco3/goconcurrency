@@ -23,7 +23,7 @@ func getLoadAvg() {
 func main() {
 	t := time.Now()
 
-	var n int64 = 1000
+	var n int = 1000
 
 	if len(os.Args) > 1 {
 		//fmt.Printf("args: %v\n", os.Args[1])
@@ -32,7 +32,7 @@ func main() {
 			fmt.Printf("Cannot parse %v\n", os.Args[1])
 			return
 		}
-		n = int64(f)
+		n = int(f)
 
 	}
 	numbers := counting.GenerateNumbers(n)

@@ -12,10 +12,10 @@ func init() {
 }
 
 // GenerateNumbers - random number generation
-func GenerateNumbers(max int64) []int {
+func GenerateNumbers(max int) []int {
 	rand.Seed(time.Now().UnixNano())
 	numbers := make([]int, max)
-	var i int64
+	var i int
 	for i = 0; i < max; i++ {
 		numbers[i] = rand.Intn(10)
 	}
